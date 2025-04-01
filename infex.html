@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW — Искусство Движения</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 50px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .image-container:hover .overlay {
+            opacity: 1;
+        }
+        .floating-text {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0;
+            animation: floatText 3s infinite;
+        }
+        @keyframes floatText {
+            0% { opacity: 0; transform: translate(-50%, 0); }
+            50% { opacity: 1; transform: translate(-50%, -10px); }
+            100% { opacity: 0; transform: translate(-50%, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BMW — Искусство Движения</h1>
+        <p>Наслаждайтесь инновациями, мощью и элегантностью. BMW — выбор истинных ценителей скорости и стиля.</p>
+        <div class="grid">
+            <a href="bmwm3.html" class="image-container">
+                <img src="bmw_avtomobil_belyj_206044_3840x2160.jpg" alt="BMW 1">
+                <div class="overlay">BMW — Драйв в каждой детали</div>
+            </a>
+            <a href="bmwi8.html" class="image-container">
+                <img src="bmw_kapot_logotip_113712_3840x2160.jpg" alt="BMW 2">
+                <div class="overlay">BMW — Скорость и Стиль</div>
+            </a>
+            <a href="bmwm8.html" class="image-container">
+                <img src="bmw_m2_f87_108806_3840x2160.jpg" alt="BMW 3">
+                <div class="overlay">BMW — Символ Превосходства</div>
+            </a>
+            <a href="bmwx5.html" class="image-container">
+                <img src="177920-bmw-sportkar-legkovyye_avtomobili-bmw_m3-bajerishe_motoren_verke_ag-3840x2160.jpg" alt="BMW 4">
+                <div class="overlay">BMW — Движение Вперед</div>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const floatingText = document.createElement("div");
+            floatingText.classList.add("floating-text");
+            floatingText.textContent = "Добро пожаловать в мир BMW!";
+            document.body.appendChild(floatingText);
+        });
+    </script>
+</body>
+</html>
